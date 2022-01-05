@@ -16,7 +16,7 @@ node {
   
 
  //       app.inside {
-            sh 'echo "Tests passed"'
+   //         sh 'echo "Tests passed"'
    //     }
     //}
 
@@ -36,11 +36,11 @@ node {
                         sh "git config user.name RajSaha"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
-                        sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${env.BUILD_NUMBER}+g' deployment.yaml"
+                        sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' deployment.yaml"
                         sh "cat deployment.yaml"
-                        sh "git add ."
-                        sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
-                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/jenkinskubernetes.git HEAD:main"
+                        //sh "git add ."
+                        //sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
+                        //sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
       }
     }
   }
