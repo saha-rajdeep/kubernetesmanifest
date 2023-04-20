@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: dsiva/test:4
+      - image: dsiva/test:latest
         name: flaskdemo
         resources: {}
 status: {}
